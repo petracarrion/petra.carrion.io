@@ -81,7 +81,7 @@
                 or offline</p>
         </section>
 
-        <section data-auto-animate>
+        <section>
             <p>Job Description</p>
             <p class="fragment fade-in">A job description is a full HTML page</p>
             <p class="fragment fade-in">It contains all the public available details about the job offer:</p>
@@ -91,7 +91,7 @@
             <span class="fragment fade-in">and full description</span>
         </section>
 
-        <section data-auto-animate>
+        <section>
             <p>Web Scrapping</p>
             <p class="fragment fade-in">The Sitemap is scrapped via regular HTTP requests</p>
             <p class="fragment fade-in">But due to the data source restrictions, we need to simulate real user
@@ -115,6 +115,40 @@
         <section data-auto-animate>
             <p data-id="rawlayer">Raw Layer</p>
             <p class="fragment fade-in">It stores the data in the exactly format as it is ingested, e.g. XML or HTML</p>
+        </section>
+
+        <section data-auto-animate>
+            <p data-id="rawlayer">Raw Layer</p>
+            <p class="fragment fade-in">The folder structure is as follows:</p>
+            <pre class="fragment fade-in" data-id="rawlayerexample"><code data-trim data-noescape>
+raw
+└── &lt;data_source&gt;
+    ├── &lt;entity&gt;
+    │   ├── &lt;year&gt;
+    │   │   ├── &lt;month&gt;
+    │   │   │   ├── &lt;date&gt;
+    │   │   │   │   ├── &lt;hour&gt;-&lt;minute&gt;-&lt;second&gt;
+    │   │   │   │   │   ├── &lt;entity_id&gt;.&lt;file_ext&gt;
+    │   │   │   │   │   ├── &lt;entity_id&gt;.&lt;file_ext&gt;
+    │   │   │   │   │   ├── ...
+                </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <p data-id="rawlayer">Raw Layer</p>
+            <p>Here is an example of the data structure</p>
+            <pre class="fragment fade-in" data-id="rawlayerexample"><code data-trim data-noescape>
+raw
+└── ѕtерѕtоոе
+    ├── job_description
+    │   ├── 2021
+    │   │   ├── 10
+    │   │   │   ├── 03
+    │   │   │   │   ├── 21-00-00
+    │   │   │   │   │   ├── 7577548.html
+    │   │   │   │   │   ├── 7577549.html
+    │   │   │   │   │   ├── ...
+                </code></pre>
         </section>
 
     </div>
