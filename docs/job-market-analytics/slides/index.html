@@ -59,14 +59,14 @@
             The project architecture has 3 high level components
             <br>
             <br>
-            <p class="fragment fade-in" data-id="adquisition">Data Adquisition</p>
+            <p class="fragment fade-in" data-id="ingestion">Data Ingestion</p>
             <p class="fragment fade-in">Data Lake</p>
             <p class="fragment fade-in">Data Warehouse</p>
         </section>
 
         <section data-auto-animate>
-            <p data-id="adquisition">Data Adquisition</p>
-            <p class="fragment fade-in">The data is adquired via web scraping</p>
+            <p data-id="ingestion">Data Ingestion</p>
+            <p class="fragment fade-in">The data is ingested via web scraping</p>
             <p class="fragment fade-in">The data source is the biggest recruitment platform in Germany</p>
             <p class="fragment fade-in">From this data source, we scrape two entities:</p>
             <p class="fragment fade-in" data-id="sitemap">Sitemap</p>
@@ -151,7 +151,7 @@ raw
                 </code></pre>
         </section>
 
-        <section>
+        <section data-auto-animate>
             <p data-id="rawlayer">Raw Layer</p>
             <p class="fragment fade-in">I have being scraping the web source since October 2021</p>
             <p class="fragment fade-in">The current raw layer data size is around 275 GB</p>
@@ -168,8 +168,19 @@ raw
         </section>
 
         <section>
-            <p>Cleansed Layer</p>
-            <p class="fragment fade-in">The cleansed layer is created ...</p>
+            <section>
+                <p>Cleansed Layer</p>
+                <p class="fragment fade-in">The data in the cleansed layer is populated by computing the raw layer data</p>
+                <p class="fragment fade-in">This computation parses the entities in the raw layer</p>
+                <p class="fragment fade-in">And discards corrupted data</p>
+            </section>
+
+            <section>
+                <p>Cleansed Layer</p>
+                <p>Additional information:</p>
+                <p><a href="https://github.com/petracarrion/job-market-analytics/blob/main/python/simplescraper/parse_sitemaps.py">parse_sitemaps.py</a> </p>
+                <p><a href="https://github.com/petracarrion/job-market-analytics/blob/main/python/simplescraper/parse_job_descriptions.py">parse_job_descriptions.py</a> </p>
+            </section>
         </section>
 
     </div>
