@@ -209,6 +209,38 @@ raw
             </section>
         </section>
 
+        <section data-auto-animate>
+            <p data-id="cleansedlayer">Cleansed Layer</p>
+            <p class="fragment fade-in">The data is partitioned is as follows:</p>
+            <pre class="fragment fade-in" data-id="rawlayerexample"><code data-trim data-noescape>
+cleansed
+└── &lt;data_source&gt;
+    ├── &lt;entity&gt;
+    │   ├── year=&lt;year&gt;
+    │   │   ├── month=&lt;month&gt;
+    │   │   │   ├── day=&lt;day&gt;
+    │   │   │   │   └── part-0.parquet
+    │   │   │   ├── day=&lt;day&gt;
+    │   │   │   │   │   ├── ...
+                </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <p data-id="cleansedlayer">Cleansed Layer</p>
+            <p>Here is an example of the data structure</p>
+            <pre class="fragment fade-in" data-id="rawlayerexample"><code data-trim data-noescape>
+cleansed
+└── ѕtерѕtоոе
+    ├── job_description
+    │   ├── year=2021
+    │   │   ├── month=10
+    │   │   │   ├── day=03
+    │   │   │   │   └── part-0.parquet
+    │   │   │   ├── day=04
+    │   │   │   │   │   ├── ...
+                </code></pre>
+        </section>
+
         <section>
             <p>Cleansed Layer</p>
             <p class="fragment fade-in">The cleansed layer is also the data source for the data warehouse</p>
