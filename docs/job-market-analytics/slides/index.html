@@ -102,6 +102,15 @@
                 raw layer as they are without any kind of transformation.</p>
         </section>
 
+        <section>
+            <p>Job Orquestration</p>
+            <p class="fragment fade-in">Airflow is used in order to orchestrate and schedule the data ingestion</p>
+            <p class="fragment fade-in">The web scrapping airflow dag is as follows</p>
+            <p class="fragment fade-in">
+                <img src="dist/images/scrape_data_source_dag.png" alt="Scrape Data Source DAG" />
+            </p>
+        </section>
+
         <section data-auto-animate>
             <p>Data Lake</p>
             <p class="fragment fade-in">It is where all ingested data is stored permanently</p>
@@ -181,6 +190,47 @@ raw
                 <p><a href="https://github.com/petracarrion/job-market-analytics/blob/main/python/simplescraper/parse_sitemaps.py">parse_sitemaps.py</a> </p>
                 <p><a href="https://github.com/petracarrion/job-market-analytics/blob/main/python/simplescraper/parse_job_descriptions.py">parse_job_descriptions.py</a> </p>
             </section>
+        </section>
+
+        <section>
+            <p>Cleansed Layer</p>
+            <p class="fragment fade-in">The cleansed layer is also the data source for the data warehouse</p>
+            <p class="fragment fade-in">The data contained in the Parquet files are actually accessed directly by the
+                data warehouse</p>
+        </section>
+
+        <section>
+            <p>Data Warehouse</p>
+            <p class="fragment fade-in">The Data Warehouse is based on PostgreSQL</p>
+            <p class="fragment fade-in">PostgreSQL might not be the best choice for a datawarehouse since it is
+                row-column-oriented but in this case we have reduced number of columns and a relative small data size</p>
+            <p class="fragment fade-in">Another advantage of PostgreSQL is that I can run it easily on my computer via
+                Docker so that I can avoid cloud service costs</p>
+        </section>
+
+        <section>
+            <p>Data Warehouse</p>
+            <p class="fragment fade-in">In order to ingest data into the data warehouse</p>
+            <p class="fragment fade-in">We mount the parquet files from the data lake cleansed layer</p>
+            <p class="fragment fade-in">Using the following foreign data wrapper extension:</p>
+            <p class="fragment fade-in">
+                <a href="https://github.com/adjust/parquet_fdw">https://github.com/adjust/parquet_fdw</a>
+            </p>
+        </section>
+
+        <section>
+            <p>Data Warehouse</p>
+            <p class="fragment fade-in">Once the data is mounted in the staging tables</p>
+            <p class="fragment fade-in">dbt scripts are used process the staging data</p>
+            <p class="fragment fade-in">And the hub and dimension tables will be populated with this data</p>
+        </section>
+
+        <section>
+            <p>Data Warehouse</p>
+            <p class="fragment fade-in">The data model in the data warehouse is as follows:</p>
+            <p class="fragment fade-in">
+                <img src="dist/images/data-vault-model.drawio.svg" alt="Data Model" style="background-color: #ffffff; padding: 10px"/>
+            </p>
         </section>
 
     </div>
