@@ -1,129 +1,139 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Job Market Analytics - petra.carrion.io</title>
+    <title>Job Market Analytics - petra.carrion.io</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
 
-				<section>
-					<h2>Job Market Analytics</h2>
-					A Data Platform Use Case by <a href="https://petra.carrion.io/">Petra Carrion</a>
-				</section>
+        <section>
+            <h2>Job Market Analytics</h2>
+            A Data Platform Use Case by <a href="https://petra.carrion.io/">Petra Carrion</a>
+        </section>
 
-				<section>
-					The purpose of this data platform use case is to explore and gain a deeper understanding about tools
-					and technologies that I am interested about
-				</section>
+        <section>
+            The purpose of this data platform use case is to explore and gain a deeper understanding about tools
+            and technologies that I am interested about
+        </section>
 
-				<section>
-					Even though my personal goal is rather technical. I have also set a business goal for the
-				data platform in order to have a vision to move towards to
-				</section>
+        <section>
+            Even though my personal goal is rather technical. I have also set a business goal for the
+            data platform in order to have a vision to move towards to
+        </section>
 
-				<section>
-					The business goal is to understand the state and trends in the job market by analysing the
-				biggest recruitment platform in Germany
-				</section>
+        <section>
+            The business goal is to understand the state and trends in the job market by analysing the
+            biggest recruitment platform in Germany
+        </section>
 
-				<section data-auto-animate>
-					Examples of business questions that can be answered with this project are the following:
-					<p class="fragment fade-in" data-id="question">How long is a job offer online until it is taken offline?</p>
-					<p class="fragment fade-in">Which technologies are the most demanded at the momment?</p>
-					<p class="fragment fade-in">How the demand for a particular technology evolves during the time?</p>
-				</section>
+        <section data-auto-animate>
+            Examples of business questions that can be answered with this project are the following:
+            <p class="fragment fade-in" data-id="question">How long is a job offer online until it is taken offline?</p>
+            <p class="fragment fade-in">Which technologies are the most demanded at the momment?</p>
+            <p class="fragment fade-in">How the demand for a particular technology evolves during the time?</p>
+        </section>
 
-				<section data-auto-animate>
-					<p data-id="question">How long is a job offer online until it is taken offline?</p>
-					<p class="fragment fade-in">
-						<img src="dist/images/days-job-offer-online.png"  alt="Days a job offer is online"/>
-					</p>
-				</section>
+        <section data-auto-animate>
+            <p data-id="question">How long is a job offer online until it is taken offline?</p>
+            <p class="fragment fade-in">
+                <img src="dist/images/days-job-offer-online.png" alt="Days a job offer is online"/>
+            </p>
+        </section>
 
-				<section>
-					Enough of business, let me show you how what this project is from the technical point of view
-				</section>
+        <section>
+            Enough of business, let me show you how what this project is from the technical point of view
+        </section>
 
-				<section data-auto-animate>
-					The project architecture has 3 high level components
-					<br>
-					<br>
-					<p class="fragment fade-in" data-id="adquisition">Data Adquisition</p>
-					<p class="fragment fade-in">Data Lake</p>
-					<p class="fragment fade-in">Data Warehouse</p>
-				</section>
+        <section data-auto-animate>
+            The project architecture has 3 high level components
+            <br>
+            <br>
+            <p class="fragment fade-in" data-id="adquisition">Data Adquisition</p>
+            <p class="fragment fade-in">Data Lake</p>
+            <p class="fragment fade-in">Data Warehouse</p>
+        </section>
 
-				<section data-auto-animate>
-					<p data-id="adquisition">Data Adquisition</p>
-					<p class="fragment fade-in">The data is adquired via web scraping</p>
-					<p class="fragment fade-in">The data source is the biggest recruitment platform in Germany</p>
-					<p class="fragment fade-in">From this data source, we scrape two entities:</p>
-					<p class="fragment fade-in" data-id="sitemap">Sitemap</p>
-					<p class="fragment fade-in">Job Description</p>
-				</section>
+        <section data-auto-animate>
+            <p data-id="adquisition">Data Adquisition</p>
+            <p class="fragment fade-in">The data is adquired via web scraping</p>
+            <p class="fragment fade-in">The data source is the biggest recruitment platform in Germany</p>
+            <p class="fragment fade-in">From this data source, we scrape two entities:</p>
+            <p class="fragment fade-in" data-id="sitemap">Sitemap</p>
+            <p class="fragment fade-in">Job Description</p>
+        </section>
 
-				<section data-auto-animate>
-					<p data-id="sitemap">Sitemap</p>
-					<p class="fragment fade-in">The sitemap is format is just plain XML</p>
-					<p class="fragment fade-in">It contains all the job descriptions URLs that are currently online</p>
-					<p class="fragment fade-in">The URL contains the job id, which helps us track when a job is online
-					or offline</p>
-				</section>
+        <section data-auto-animate>
+            <p data-id="sitemap">Sitemap</p>
+            <p class="fragment fade-in">The sitemap is format is just plain XML</p>
+            <p class="fragment fade-in">It contains all the job descriptions URLs that are currently online</p>
+            <p class="fragment fade-in">The URL contains the job id, which helps us track when a job is online
+                or offline</p>
+        </section>
 
-				<section data-auto-animate>
-					<p>Job Description</p>
-					<p class="fragment fade-in">A job description is a full HTML page</p>
-					<p class="fragment fade-in">It contains all the public available details about the job offer:</p>
-					<span class="fragment fade-in">company, </span>
-					<span class="fragment fade-in">location, </span>
-					<span class="fragment fade-in">job title, </span>
-					<span class="fragment fade-in">and full description</span>
-				</section>
+        <section data-auto-animate>
+            <p>Job Description</p>
+            <p class="fragment fade-in">A job description is a full HTML page</p>
+            <p class="fragment fade-in">It contains all the public available details about the job offer:</p>
+            <span class="fragment fade-in">company, </span>
+            <span class="fragment fade-in">location, </span>
+            <span class="fragment fade-in">job title, </span>
+            <span class="fragment fade-in">and full description</span>
+        </section>
 
-				<section data-auto-animate>
-					<p>Web Scrapping</p>
-					<p class="fragment fade-in">The Sitemap is scrapped via regular HTTP requests</p>
-					<p class="fragment fade-in">But due to the data source restrictions, we need to simulate real user
-					traffic to crawl and download the Job Descriptions</p>
-					<p class="fragment fade-in">In order to simulate web interactions, I use the
-						<a href="https://playwright.dev/">Playwright</a> headless browser</p>
-					<p class="fragment fade-in">Both entities Sitemap and Job Description are stored in the Data Lake
-						raw layer as they are without any kind of transformation.</p>
-				</section>
+        <section data-auto-animate>
+            <p>Web Scrapping</p>
+            <p class="fragment fade-in">The Sitemap is scrapped via regular HTTP requests</p>
+            <p class="fragment fade-in">But due to the data source restrictions, we need to simulate real user
+                traffic to crawl and download the Job Descriptions</p>
+            <p class="fragment fade-in">In order to simulate web interactions, I use the
+                <a href="https://playwright.dev/">Playwright</a> headless browser</p>
+            <p class="fragment fade-in">Both entities Sitemap and Job Description are stored in the Data Lake
+                raw layer as they are without any kind of transformation.</p>
+        </section>
 
-				<section data-auto-animate>
-					<span>Data Lake</span>
-					<p class="fragment fade-in">...</p>
-				</section>
+        <section data-auto-animate>
+            <p>Data Lake</p>
+            <p class="fragment fade-in">It is where all ingested data is stored permanently</p>
+            <p class="fragment fade-in">It is located at my computers file system but it could be easily
+                relocated to cloud storage</p>
+            <p class="fragment fade-in">It is divided in two layers:</p>
+            <p class="fragment fade-in" data-id="rawlayer">Raw Layer</p>
+            <p class="fragment fade-in">Cleansed Layer</p>
+        </section>
 
-			</div>
-		</div>
+        <section data-auto-animate>
+            <p data-id="rawlayer">Raw Layer</p>
+            <p class="fragment fade-in">It stores the data in the exactly format as it is ingested, e.g. XML or HTML</p>
+        </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    </div>
+</div>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+</script>
+</body>
 </html>
