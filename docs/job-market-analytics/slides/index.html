@@ -144,8 +144,7 @@
         </section>
 
         <section data-auto-animate>
-            <p data-id="rawlayer">Raw Layer</p>
-            <p class="fragment fade-in">The folder structure is as follows:</p>
+            <p>The folder structure is as follows:</p>
             <pre class="fragment fade-in" data-id="rawlayerexample"><code data-trim data-noescape>
 raw
 └── &lt;data_source&gt;
@@ -161,7 +160,6 @@ raw
         </section>
 
         <section data-auto-animate>
-            <p data-id="rawlayer">Raw Layer</p>
             <p>Here is an example of the data structure</p>
             <pre class="fragment fade-in" data-id="rawlayerexample"><code data-trim data-noescape>
 raw
@@ -178,8 +176,7 @@ raw
         </section>
 
         <section data-auto-animate>
-            <p data-id="rawlayer">Raw Layer</p>
-            <p class="fragment fade-in">I have being scraping the web source since October 2021</p>
+            <p>I have being scraping the web source since October 2021</p>
             <p class="fragment fade-in">The current raw layer data size is around 275 GB</p>
             <p class="fragment fade-in">And it grows around 2 GB per day</p>
         </section>
@@ -195,14 +192,12 @@ raw
 
         <section>
             <section>
-                <p>Cleansed Layer</p>
-                <p class="fragment fade-in">The data in the cleansed layer is populated by computing the raw layer data</p>
+                <p>The data in the cleansed layer is populated by computing the raw layer data</p>
                 <p class="fragment fade-in">This computation parses the entities in the raw layer</p>
                 <p class="fragment fade-in">And discards corrupted data</p>
             </section>
 
             <section>
-                <p>Cleansed Layer</p>
                 <p>Additional information:</p>
                 <p><a href="https://github.com/petracarrion/job-market-analytics/blob/main/python/simplescraper/parse_sitemaps.py">parse_sitemaps.py</a> </p>
                 <p><a href="https://github.com/petracarrion/job-market-analytics/blob/main/python/simplescraper/parse_job_descriptions.py">parse_job_descriptions.py</a> </p>
@@ -210,8 +205,7 @@ raw
         </section>
 
         <section data-auto-animate>
-            <p data-id="cleansedlayer">Cleansed Layer</p>
-            <p class="fragment fade-in">The data is partitioned is as follows:</p>
+            <p>The cleansed layer data is partitioned is as follows:</p>
             <pre class="fragment fade-in" data-id="rawlayerexample"><code data-trim data-noescape>
 cleansed
 └── &lt;data_source&gt;
@@ -226,8 +220,7 @@ cleansed
         </section>
 
         <section data-auto-animate>
-            <p data-id="cleansedlayer">Cleansed Layer</p>
-            <p>Here is an example of the data structure</p>
+            <p>Here is an example of the cleansed layer structure</p>
             <pre class="fragment fade-in" data-id="rawlayerexample"><code data-trim data-noescape>
 cleansed
 └── ѕtерѕtоոе
@@ -242,8 +235,7 @@ cleansed
         </section>
 
         <section>
-            <p>Cleansed Layer</p>
-            <p class="fragment fade-in">The cleansed layer is also the data source for the data warehouse</p>
+            <p>The cleansed layer is also the data source for the data warehouse</p>
             <p class="fragment fade-in">The data contained in the Parquet files are actually accessed directly by the
                 data warehouse</p>
         </section>
@@ -258,8 +250,7 @@ cleansed
         </section>
 
         <section>
-            <p>Data Warehouse</p>
-            <p class="fragment fade-in">In order to ingest data into the data warehouse</p>
+            <p>In order to ingest data into the data warehouse</p>
             <p class="fragment fade-in">We mount the parquet files from the data lake cleansed layer</p>
             <p class="fragment fade-in">Using the following foreign data wrapper extension:</p>
             <p class="fragment fade-in">
@@ -268,15 +259,13 @@ cleansed
         </section>
 
         <section>
-            <p>Data Warehouse</p>
-            <p class="fragment fade-in">Once the data is mounted in the staging tables</p>
-            <p class="fragment fade-in">dbt scripts are used process the staging data</p>
+            <p>Once the data is mounted in the staging tables</p>
+            <p class="fragment fade-in"><a href="https://www.getdbt.com/">dbt</a> scripts are used process the staging data</p>
             <p class="fragment fade-in">And the hub and dimension tables will be populated with this data</p>
         </section>
 
         <section>
-            <p>Data Warehouse</p>
-            <p class="fragment fade-in">The data model in the data warehouse is as follows:</p>
+            <p>The data model in the data warehouse is as follows:</p>
             <p class="fragment fade-in">
                 <img src="dist/images/data-vault-model.drawio.svg" alt="Data Model" style="background-color: #ffffff; padding: 10px"/>
             </p>
