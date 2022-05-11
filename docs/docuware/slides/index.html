@@ -106,6 +106,54 @@
             <img src="dist/images/pagination.png" alt=""/>
         </section>
 
+        <section>
+            <p>Data Destination</p>
+            <p class="fragment fade-in">As data destination I created an Azure SQL DB</p>
+            <p class="fragment fade-in">And created the following table</p>
+            <p class="fragment fade-in">My only addition to the given JSON object is the last column</p>
+            <p class="fragment fade-in">Ingestion Date</p>
+        </section>
+
+        <section>
+            <img src="dist/images/table.png" alt=""/>
+        </section>
+
+        <section>
+            <p>This Azure SQL table is used as data sink on the copy pipeline</p>
+        </section>
+
+        <section>
+            <img src="dist/images/pagination.png" alt=""/>
+        </section>
+
+        <section>
+            <p>And the mapping is one-to-one between the JSON format and the SQL table</p>
+            <p class="fragment fade-in">We just skip the paging parameters</p>
+            <p class="fragment fade-in">And add the ingestion date</p>
+        </section>
+
+        <section>
+            <img src="dist/images/mapping.png" alt=""/>
+        </section>
+
+        <section>
+            <p>Creating the Azure Data Factory Copy Pipeline was easy</p>
+            <p class="fragment fade-in">Due to the fact that started by creating a Mock API</p>
+            <p class="fragment fade-in">This data for the Mock API was created via Python</p>
+        </section>
+
+        <section>
+            <img src="dist/images/generatemockapi.png" alt=""/>
+        </section>
+
+        <section>
+            <p>And it is served by a free only service called Beeceptor.com</p>
+        </section>
+
+        <section>
+            <img src="dist/images/beeceptor.png" alt=""/>
+        </section>
+
     </div>
 </div>
 
