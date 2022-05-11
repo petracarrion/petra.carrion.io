@@ -22,21 +22,26 @@
         </section>
 
         <section>
-            <p>Note: all date related to DocuWare will removed from Github and Azure as soon as this recruitment process is concluded</p>
+            <p>Note: all date related to DocuWare will removed from Github and Azure as soon as this recruitment process
+                is concluded</p>
         </section>
 
         <section>
             <p>Overview</p>
-            <p class="fragment fade-in">An Azure Data Factory Copy Pipeline was created to ingest data from the REST API to the database</p>
+            <p class="fragment fade-in">An Azure Data Factory Copy Pipeline was created to ingest data from the REST API
+                to the database</p>
             <p class="fragment fade-in">In order to test the pipeline end-to-end, an API Mock was created</p>
-            <p class="fragment fade-in">In order to create a basic Power BI report, historical mock data was generated</p>
+            <p class="fragment fade-in">In order to create a basic Power BI report, historical mock data was
+                generated</p>
         </section>
 
         <section>
             <p>Azure Data Factory</p>
             <p class="fragment fade-in">I created an Azure Subscription for this use case</p>
             <p class="fragment fade-in">And created an Azure Data Factory instance</p>
-            <p class="fragment fade-in">My Azure Data Factory objects are persisted on my private Github Project as Infrastructure-as-Code: <a href="https://github.com/petracarrion/docuware/tree/main/datafactory">https://github.com/petracarrion/docuware/tree/main/datafactory</a> </p>
+            <p class="fragment fade-in">My Azure Data Factory objects are persisted on my private Github Project as
+                Infrastructure-as-Code: <a href="https://github.com/petracarrion/docuware/tree/main/datafactory">https://github.com/petracarrion/docuware/tree/main/datafactory</a>
+            </p>
             <p class="fragment fade-in">But I actually provision all Azure Infrastructure using the Web UI</p>
         </section>
 
@@ -46,13 +51,59 @@
             <p class="fragment fade-in">It runs every 24 hours</p>
             <p class="fragment fade-in">Reads data from a REST API endpoint</p>
             <p class="fragment fade-in">And writes it on an Azure SQL DB</p>
-            <p class="fragment fade-in"><img src="dist/images/pipelineoverview.png" alt=""/> </p>
+        </section>
+
+        <section>
+            <img src="dist/images/pipelineoverview.png" alt=""/>
         </section>
 
         <section>
             <p>Scheduling</p>
             <p class="fragment fade-in">This is the trigger that makes the pipeline run everyday after 12am</p>
-            <p class="fragment fade-in"><img src="dist/images/trigger.png" alt=""/> </p>
+            <p class="fragment fade-in">Please note the recurrence every 24 hours</p>
+        </section>
+
+        <section>
+            <img src="dist/images/trigger.png" alt=""/>
+        </section>
+
+        <section>
+            <p>Data Source</p>
+            <p class="fragment fade-in">For the Data Source I use a "REST" Dataset</p>
+            <p class="fragment fade-in">Which points to an API Mock I created</p>
+            <p class="fragment fade-in"><a href="https://contact-feed.free.beeceptor.com/">https://contact-feed.free.beeceptor.com/</a></p>
+        </section>
+
+        <section>
+            <img src="dist/images/restdatasource.png" alt=""/>
+        </section>
+
+        <section>
+            <p>This API Mock is actually paginated</p>
+            <p class="fragment fade-in">And in order to download all data,</p>
+            <p class="fragment fade-in">we must go through all these URLs</p>
+            <p class="fragment fade-in"><a href="https://contact-feed.free.beeceptor.com/">https://contact-feed.free.beeceptor.com/</a></p>
+            <p class="fragment fade-in"><a href="https://contact-feed.free.beeceptor.com/?after=0100">https://contact-feed.free.beeceptor.com/?after=0100</a></p>
+            <p class="fragment fade-in"><a href="https://contact-feed.free.beeceptor.com/?after=0200">https://contact-feed.free.beeceptor.com/?after=0200</a></p>
+            <p class="fragment fade-in"><a href="https://contact-feed.free.beeceptor.com/?after=0300">...</a></p>
+            <p class="fragment fade-in"><a href="https://contact-feed.free.beeceptor.com/?after=1000">https://contact-feed.free.beeceptor.com/?after=1000</a></p>
+        </section>
+
+        <section>
+            <p>To solve the pagination, I configured on the Data Soruce Tab</p>
+            <p class="fragment fade-in">The correspoding "Pagination Rules"</p>
+        </section>
+
+        <section>
+            <img src="dist/images/pagination.png" alt=""/>
+        </section>
+
+        <section>
+            <p>And added an "additional column" for the ingestion date</p>
+        </section>
+
+        <section>
+            <img src="dist/images/pagination.png" alt=""/>
         </section>
 
     </div>
