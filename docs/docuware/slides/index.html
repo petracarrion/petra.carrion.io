@@ -26,7 +26,33 @@
         </section>
 
         <section>
-            <p>Thanks for your attention!</p>
+            <p>Overview</p>
+            <p class="fragment fade-in">An Azure Data Factory Copy Pipeline was created to ingest data from the REST API to the database</p>
+            <p class="fragment fade-in">In order to test the pipeline end-to-end, an API Mock was created</p>
+            <p class="fragment fade-in">In order to create a basic Power BI report, historical mock data was generated</p>
+        </section>
+
+        <section>
+            <p>Azure Data Factory</p>
+            <p class="fragment fade-in">I created an Azure Subscription for this use case</p>
+            <p class="fragment fade-in">And created an Azure Data Factory instance</p>
+            <p class="fragment fade-in">My Azure Data Factory objects are persisted on my private Github Project as Infrastructure-as-Code: <a href="https://github.com/petracarrion/docuware/tree/main/datafactory">https://github.com/petracarrion/docuware/tree/main/datafactory</a> </p>
+            <p class="fragment fade-in">But I actually provision all Azure Infrastructure using the Web UI</p>
+        </section>
+
+        <section>
+            <p>Copy Pipeline</p>
+            <p class="fragment fade-in">The Copy Pipeline is fairly simple</p>
+            <p class="fragment fade-in">It runs every 24 hours</p>
+            <p class="fragment fade-in">Reads data from a REST API endpoint</p>
+            <p class="fragment fade-in">And writes it on an Azure SQL DB</p>
+            <p class="fragment fade-in"><img src="dist/images/pipelineoverview.png" alt=""/> </p>
+        </section>
+
+        <section>
+            <p>Scheduling</p>
+            <p class="fragment fade-in">This is the trigger that makes the pipeline run everyday after 12am</p>
+            <p class="fragment fade-in"><img src="dist/images/trigger.png" alt=""/> </p>
         </section>
 
     </div>
