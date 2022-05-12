@@ -28,11 +28,30 @@
 
         <section>
             <p>Overview</p>
+            <p class="fragment fade-in">In order to test the pipeline end-to-end, an API Mock was created</p>
             <p class="fragment fade-in">An Azure Data Factory Copy Pipeline was created to ingest data from the REST API
                 to the database</p>
-            <p class="fragment fade-in">In order to test the pipeline end-to-end, an API Mock was created</p>
             <p class="fragment fade-in">In order to create a basic Power BI report, historical mock data was
                 generated</p>
+        </section>
+
+        <section>
+            <p>A few notes, before I start describing the Copy Pipelines</p>
+            <p class="fragment fade-in">Creating the Azure Data Factory Copy Pipeline was relative easy</p>
+            <p class="fragment fade-in">Due to the fact that I actually started by creating a Mock API</p>
+            <p class="fragment fade-in">This data for the Mock API was created via Python</p>
+        </section>
+
+        <section>
+            <img src="dist/images/generatemockapi.png" alt=""/>
+        </section>
+
+        <section>
+            <p>And it is served by a free online service called Beeceptor.com</p>
+        </section>
+
+        <section>
+            <img src="dist/images/beeceptor.png" alt=""/>
         </section>
 
         <section>
@@ -142,25 +161,8 @@
         </section>
 
         <section>
-            <p>Creating the Azure Data Factory Copy Pipeline was easy</p>
-            <p class="fragment fade-in">Due to the fact that I actually started by creating a Mock API</p>
-            <p class="fragment fade-in">This data for the Mock API was created via Python</p>
-        </section>
-
-        <section>
-            <img src="dist/images/generatemockapi.png" alt=""/>
-        </section>
-
-        <section>
-            <p>And it is served by a free online service called Beeceptor.com</p>
-        </section>
-
-        <section>
-            <img src="dist/images/beeceptor.png" alt=""/>
-        </section>
-
-        <section>
-            <p>This all result on 3 objects on the Azure Data Factory:</p>
+            <p>Wrapping it up</p>
+            <p class="fragment fade-in">This all result on 3 objects on the Azure Data Factory:</p>
             <p class="fragment fade-in">One Pipeline</p>
             <p class="fragment fade-in">And two Datasets</p>
         </section>
