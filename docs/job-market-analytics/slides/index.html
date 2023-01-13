@@ -246,34 +246,32 @@ cleansed
 
         <section>
             <p>Data Warehouse</p>
-            <p class="fragment fade-in">The Data Warehouse is based on PostgreSQL</p>
-            <p class="fragment fade-in">PostgreSQL might not be the best choice for a datawarehouse since it is
-                row-column-oriented but in this case, there is a reduced number of columns and a relative small data
-                size</p>
-            <p class="fragment fade-in">Another advantage of PostgreSQL is that I can run it easily on my computer via
-                Docker so that I can avoid cloud service costs</p>
+            <p class="fragment fade-in">The Data Warehouse is based on DuckDB</p>
+            <p class="fragment fade-in">DuckDB is an in-process SQL OLAP database management system</p>
+            <p class="fragment fade-in">The architecture is very similar to SQLite but in this case it is column
+            oriented and optimized for analytical loads</p>
+            <p class="fragment fade-in">And being an in-process database is a big advantage since it
+                consumes no resources unless it is being actively used by a program</p>
         </section>
 
         <section>
             <p>In order to ingest data into the data warehouse</p>
-            <p class="fragment fade-in">The parquet files from the data lake cleansed layer are mounted using the
-                following foreign data wrapper extension:</p>
-            <p class="fragment fade-in">
-                <a href="https://github.com/adjust/parquet_fdw">https://github.com/adjust/parquet_fdw</a>
-            </p>
+            <p class="fragment fade-in">DuckDB uses a few views that expose data stored in parquet format</p>
+            <p class="fragment fade-in">I called this layer that is shared between the data layer and the data warehouse
+            curated but from the point of view of the datawarehause, it could have been called staging or ingestion</p>
         </section>
 
         <section>
-            <p>Once the data is mounted in the staging tables</p>
-            <p class="fragment fade-in"><a href="https://www.getdbt.com/">dbt</a> scripts are used process the staging
+            <p>Once the data is exposed in the as parquet views</p>
+            <p class="fragment fade-in"><a href="https://www.getdbt.com/">dbt</a> scripts are used process the curated
                 data</p>
-            <p class="fragment fade-in">And the hub and dimension tables will be populated with this data</p>
+            <p class="fragment fade-in">And the fact and dimension tables will be populated with this data</p>
         </section>
 
         <section>
             <p>The data model in the data warehouse is as follows:</p>
             <p class="fragment fade-in">
-                <img alt="Data Model" src="dist/images/data-vault-model.drawio.svg"
+                <img alt="Data Model" src="dist/images/dbt-dag.png"
                      style="background-color: #ffffff; padding: 10px"/>
             </p>
         </section>
